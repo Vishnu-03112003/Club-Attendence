@@ -1,0 +1,20 @@
+<div class="mepco-banner">
+  <img src="mepco-logo.png.png" alt="MEPCO Logo" class="main-logo">
+  <h1>MEPCO SCHLENK ENGINEERING COLLEGE</h1>
+</div>
+
+<div class="container">
+  <h2 class="category-title">CO-CURRICULAR</h2>
+  <div class="club-grid">
+    <div *ngFor="let club of coCurricular" [routerLink]="['/attendance', club]" class="club-card">
+      {{ club }}
+    </div>
+  </div>
+
+  <h2 class="category-title" style="margin-top: 40px;">EXTRA-CURRICULAR</h2>
+  <div class="club-grid">
+    <div *ngFor="let club of extraCurricular" [routerLink]="['/attendance', club]" class="club-card">
+      {{ club }}
+    </div>
+  </div>
+</div>

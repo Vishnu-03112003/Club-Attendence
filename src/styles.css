@@ -1,0 +1,126 @@
+/* src/styles.css */
+body { font-family: sans-serif; margin: 0; background: #f0f2f5; }
+
+.mepco-banner { 
+    background: #004a99; 
+    color: white; 
+    text-align: center; 
+    padding: 20px; 
+}
+
+.main-logo { height: 80px; }
+
+.club-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    gap: 15px; 
+    padding: 20px;
+}
+
+.club-card { 
+    background: white; 
+    padding: 20px; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    border-bottom: 4px solid #004a99; 
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Add these to your existing styles.css */
+
+.container { 
+    max-width: 800px; 
+    margin: 20px auto; 
+    padding: 0 20px; 
+}
+
+.event-form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.event-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Important for layout */
+}
+
+.attendance-table {
+    width: 100%;
+    background: white;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.attendance-table th, .attendance-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.status-btn {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.present-btn {
+    background: #28a745 !important;
+}
+
+.submit-btn {
+    background: #004a99;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #004a99;
+    text-decoration: none;
+}
+
+/* --- Updates for Classified Club Categories --- */
+
+.category-title {
+    color: #004a99;
+    border-bottom: 2px solid #004a99;
+    padding-bottom: 5px;
+    margin: 30px 20px 10px 20px; /* Aligns with your grid padding */
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Overriding the generic grid to force 3 columns like your image */
+.club-grid {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 15px; 
+    padding: 10px 20px 30px 20px;
+}
+
+/* Mobile fix so it doesn't stay 3 columns on small screens */
+@media (max-width: 768px) {
+    .club-grid {
+        grid-template-columns: 1fr;
+    }
+}

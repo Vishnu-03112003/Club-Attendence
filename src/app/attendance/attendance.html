@@ -1,0 +1,45 @@
+<!-- Re-using the same banner style as the Home page -->
+<div class="mepco-banner">
+  <img src="mepco-logo.png" alt="MEPCO Logo" class="main-logo">
+  <h1>{{ clubName }}</h1>
+  <p>Saturday 5th Hour Attendance</p>
+</div>
+
+<div class="container">
+  <!-- Event Input Section -->
+  <div class="event-form">
+    <h3>Event Details</h3>
+    <input type="text" [(ngModel)]="eventName" placeholder="Enter Event Name">
+    <input type="text" [(ngModel)]="presenter" placeholder="Coordinators / Presenters">
+    <p class="date-label">Date: <strong>{{ date }}</strong></p>
+  </div>
+
+  <!-- Attendance Table -->
+  <table class="attendance-table">
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Year</th>
+        <th>Role</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let s of students">
+        <td>{{ s.name }}</td>
+        <td>{{ s.year }}</td>
+        <td>{{ s.isOB ? 'Office Bearer' : 'Member' }}</td>
+        <td>
+          <button (click)="s.present = !s.present" [class.present-btn]="s.present" class="status-btn">
+            {{ s.present ? '✓ Present' : 'Mark Absent' }}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer-actions">
+    <button (click)="submit()" class="submit-btn">Final Submit</button>
+    <button routerLink="/" class="back-link">← Back to Clubs</button>
+  </div>
+</div>
